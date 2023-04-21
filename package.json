@@ -1,26 +1,20 @@
 {
-  "name": "blunder-bot",
+  "name": "blunder",
   "version": "1.0.0",
-  "description": "Blunder the fish",
-  "main": "maing.js",
-  "type": "module",
-  "engines": {
-    "node": "16.x"
-  },
+  "description": "blunder the fisj",
+  "main": "main.js",
+  "devDependencies": {},
   "scripts": {
-    "start": "node app.js",
-    "register": "node commands.js",
-    "dev": "nodemon app.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Shay DeWael",
-  "license": "MIT",
-  "dependencies": {
-    "discord-interactions": "^3.2.0",
-    "dotenv": "^16.0.3",
-    "express": "^4.18.2",
-    "node-fetch": "^3.3.0"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jbe05/disc_bot.git"
   },
-  "devDependencies": {
-    "nodemon": "^2.0.15"
-  }
+  "author": "jcode05",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jbe05/disc_bot/issues"
+  },
+  "homepage": "https://github.com/jbe05/disc_bot#readme"
 }
