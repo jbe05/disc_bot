@@ -1,5 +1,7 @@
 const fs = require('node:fs');
 const path = require('node:path');
+const { Op } = require('sequelize');
+
 const { Client, Collection, Events, GatewayIntentBits } = require('discord.js');
 require('dotenv').config();
 
@@ -48,8 +50,8 @@ client.on(Events.InteractionCreate, async interaction => {
 
 // When the client is ready, run this code (only once)
 // We use 'c' for the event parameter to keep it separate from the already defined 'client'
-client.once(Events.ClientReady, c => {
-    console.log(`Ready! Logged in as ${c.user.tag}`);
+client.once(Events.ClientReady, async () => {
+    console.log(`Logged in as ${client.user.tag}!`);
 });
 
 // Log in to Discord with your client's token
