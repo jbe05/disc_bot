@@ -2,11 +2,21 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { Op } = require('sequelize');
 const keep_alive = require('./keep_alive.js');
+const mongoose = require('mongoose');
 
 const { Client, Collection, Events, GatewayIntentBits } = require('discord.js');
 require('dotenv').config();
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
+
+(async () => {
+  try {
+    await mongoose.connect(process.env.MONGODB_URI, { keepAlive: true });
+    console.log('Connected to MongoDB');
+  } catch(err) {
+    console.log(err);
+  }
+})();
 
 client.commands = new Collection();
 const foldersPath = path.join(__dirname, 'commands');
